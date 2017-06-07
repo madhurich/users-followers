@@ -1,0 +1,13 @@
+> ng new users-followers
+> ng generate component gitUsersFollowers
+> added a form in html
+
+REFER 
+
+<form #varName="ngForm" (ngSubmit)="onSubmit(f)">
+    <input type="text" name="someName" [(ngModel)]="inputName" />
+</form>
+
+every input must have a name attribute that can be anything meaningful
+and value of [(ngModel)] must be the name defined in the class, ie 'inputName'
+must be defined.
