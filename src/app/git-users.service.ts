@@ -12,4 +12,14 @@ export class GitUsersService {
               .map(res => res.json());
   }
 
+  getRepos(user){
+    return this._http.get(this.url + user + '/repos')
+              .map(res => res.json()); 
+  }
+
+  getFollowers(user){
+    return this._http.get(this.url + user + '/followers')
+              .map(res => res.json()); 
+  }
+
 }
