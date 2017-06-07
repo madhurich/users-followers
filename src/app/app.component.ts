@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {GitUsersFollowersComponent} from './git-users-followers/git-users-followers.component';
 
 @Component({
   selector: 'app-root',

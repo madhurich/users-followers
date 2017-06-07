@@ -1,0 +1,8 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+    <input 
+    type="text"
+    [(ngModel)]="inputUser"
+    name="inputUser"
+    />
+    <button>get User</button>
+</form>
