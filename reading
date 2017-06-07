@@ -11,3 +11,8 @@ REFER
 every input must have a name attribute that can be anything meaningful
 and value of [(ngModel)] must be the name defined in the class, ie 'inputName'
 must be defined.
+
+YOU GOT AN ERROR SAYING, 'NO PROVIDER FOR Http in AppComponent'
+
+this is due to the speling mistake
+import {Http} from '@angular/http';//--> here you need to mention small 'http' not 'Http'

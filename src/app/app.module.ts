@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { GitUsersFollowersComponent } from './git-users-followers/git-users-followers.component';
+import {GitUsersService} from './git-users.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { GitUsersFollowersComponent } from './git-users-followers/git-users-foll
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [{provide:'gitUsers', useClass:GitUsersService}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
