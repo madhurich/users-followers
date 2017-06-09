@@ -8,16 +8,12 @@ import 'rxjs/add/observable/forkJoin';
   styleUrls: ['./git-users-followers.component.css']
 })
 export class GitUsersFollowersComponent implements OnInit {
+  
   onSubmit;
   user;
-  //repos;
   constructor(@Inject('gitUsers') private gitUsers) { }
-    
-  
-  ngOnInit() {
-      this.onSubmit = (f) => {
-      console.log(f);
-      Observable
+  callObservable(f){
+       Observable
         .forkJoin(this.gitUsers.getUsers(f.controls.inputUser.value),
                   this.gitUsers.getRepos(f.controls.inputUser.value),
                   this.gitUsers.getFollowers(f.controls.inputUser.value))
@@ -29,7 +25,13 @@ export class GitUsersFollowersComponent implements OnInit {
         .subscribe((res) => {
           console.log(res);
           this.user = res;
-        })          
+        })   
+  }
+  
+  ngOnInit() {
+      this.onSubmit = (f) => {
+      console.log(f);
+      this.callObservable(f);    
       // this.gitUsers.getUsers(f.controls.inputUser.value)
       //               .subscribe((user) => {
       //                 console.log(user);

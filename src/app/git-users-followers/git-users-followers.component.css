@@ -3,6 +3,6 @@
     width: 150px;
     border-radius: 50%;
 }
-#users{
+#repos, #followers{
     display: inline-block;
 }

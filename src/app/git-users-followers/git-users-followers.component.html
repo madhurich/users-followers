@@ -6,7 +6,7 @@
     />
     <button>get User</button>
 </form>
-<div>
+<div *ngIf="user" >
     <div>
         <img src="{{user?.user?.avatar_url}}" id="avatar"/>
     </div>
